@@ -27,7 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'giovannyskl@gmail.com'
+EMAIL_HOST_PASSWORD = 'AliceFroggyJunior1785'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+'''
+Para usar gmail hay que desbloquear captcha
+https://accounts.google.com/diplayunlockcaptcha
+'''
 # Application definition
 
 INSTALLED_APPS = [

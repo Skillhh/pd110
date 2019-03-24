@@ -1,12 +1,11 @@
-
-  <!-- <h1>Hola Mundo</h1> -->
   <h1>
     {{title}}
+    {{request.user}}
   </h1>
-  {{request.user}}
+
   <hr>
   <br>
   <form class="" action="" method="post">{% csrf_token %}
-    {{ el_form.as_p }}
+    {{ form.as_p }}
     <input type="submit" name="" value="Registrame">
   </form>
