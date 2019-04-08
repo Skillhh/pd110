@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/mnt/Information/PyWeb/pd110"
+VIRTUAL_ENV="/mnt/Info/Django/pd110"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

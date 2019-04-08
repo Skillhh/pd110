@@ -1,4 +1,4 @@
-#!/mnt/Information/PyWeb/pd110/bin/python
+#!/mnt/Info/Django/pd110/bin/python
 
 import sys
 import getopt

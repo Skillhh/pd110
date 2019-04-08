@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.core.mail import send_mail
-from django.conf import settings
+# from django.core.mail import send_mail
+# from django.conf import settings
 
 from .forms import RegModelForm, ContactForm
 from .models import Registrado
@@ -31,26 +31,28 @@ def inicio(request):
 
 def contact(request):
     form = ContactForm(request.POST or None)
+    title = "Contactanos"
     if form.is_valid():
-        # for key in form.cleaned_data:
-        #     print( key, " ", form.cleaned_data.get(key))
-        from_nombre = form.cleaned_data.get("nombre")
-        from_email = form.cleaned_data.get("email")
-        from_mensaje = form.cleaned_data.get("mensaje")
+        for key in form.cleaned_data:
+            print( key, " ", form.cleaned_data.get(key))
+    #     from_nombre = form.cleaned_data.get("nombre")
+    #     from_email = form.cleaned_data.get("email")
+    #     from_mensaje = form.cleaned_data.get("mensaje")
         # print( nombre, email, mensaje )
-        asunto = 'Form de Contacto'
-        email_from = settings.EMAIL_HOST_USER
-        email_to = [email_from] 
-        email_mensaje = ("%s: %s enviado por %s" %(from_nombre, from_mensaje, from_email ))
-        send_mail(
-            email_from,
-            [email_to],
-            asunto,
-            email_mensaje,            
-            fail_silently=False
-            )
+    #     asunto = 'Form de Contacto'
+    #     email_from = settings.EMAIL_HOST_USER
+    #     email_to = [email_from] 
+    #     email_mensaje = ("%s: %s enviado por %s" %(from_nombre, from_mensaje, from_email ))
+    #     send_mail(
+    #         email_from,
+    #         [email_to],
+    #         asunto,
+    #         email_mensaje,            
+    #         fail_silently=False
+    #         )
     context = {
+        "title": title,
         "form" : form,
     }
-
-    return render(request, "forms.html", context)
+    return render(request, "forms.html",context)
+    
