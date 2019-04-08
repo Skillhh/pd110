@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from boletin import views
+from .views import about
 
 
 
@@ -26,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.inicio, name='inicio'),
     path('contact/', views.contact, name='contact'),
+    path('about/', about, name='about'),
 ]
 
 # if settings.DEBUG:

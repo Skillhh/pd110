@@ -1,11 +1,36 @@
-  <h1>
-    {{title}}
-    {{request.user}}
-  </h1>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
-  <hr>
-  <br>
-  <form class="" action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" name="" value="Registrame">
-  </form>
+{% block head_title %} Contactanos {{block.super}}{% endblock head_title %}
+
+{% comment %} {% block jumbotron_content %}
+<div class="row">
+  <div class="col-sm-6">                
+    <h1>Probar Djnago</h1>
+    <p class="lead">Un proyecto para principiantes. EL objetvo es construir una página web
+    simple y elegante en muy poco tiempo</p>
+    <a class="btn btn-lg btn-primary" href="/docs/4.3/components/navbar/"
+      role="button">Únete &raquo;</a>
+  </div>
+  <div class="col-sm-6" style="background-color: black; height: 300px;"></div>
+</div>
+{% endblock jumbotron_content %} {% endcomment %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-sm-6 align-center">
+      <h1>
+        {{title}}
+      </h1>
+
+      <hr>
+      <br>
+      <form class="" action="" method="post">{% csrf_token %}
+        {{ form|crispy }}
+        <input class="btn btn-primary" type="submit" name="" value="Registrame">
+      </form>
+    </div>
+  </div>
+  <hr/>
+  <br/>
+{% endblock content %}

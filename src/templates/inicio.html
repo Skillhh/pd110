@@ -1,18 +1,24 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block head_title %} Inicio {{block.super}}{% endblock head_title %}
 
-{% block jumbotron_content %}
-                  
-  <h1>INICIO</h1>
-  <p class="lead">This example is a quick exercise to illustrate how the
-      top-aligned navbar works. As you scroll, this navbar remains in its original
-      position and moves with the rest of the page.</p>
-  <a class="btn btn-lg btn-primary" href="/docs/4.3/components/navbar/"
-    role="button">View navbar docs &raquo;</a>
+{% block jumbotron %}
 
-{% endblock jumbotron_content %}
+  <div class="jumbotron"> 
+    <div class="row">
+      <div class="col-sm-6">                
+        <h1>Probar Djnago</h1>
+        <p class="lead">Un proyecto para principiantes. EL objetvo es construir una página web
+        simple y elegante en muy poco tiempo</p>
+        <a class="btn btn-lg btn-primary" href="/docs/4.3/components/navbar/"
+          role="button">Únete &raquo;</a>
+      </div>
+      <div class="col-sm-6" style="background-color: black; height: 300px;"></div>
+    </div>
+  </div>    
 
+{% endblock jumbotron %}
 
 <h1>
   {{title}}
@@ -20,9 +26,32 @@
 {{request.user}}
 <hr>
 <br>
+
 {% block content %}
-  <form class="" action="" method="post">{% csrf_token %}
-    {{ el_form.as_p }}
-    <input type="submit" name="" value="Registrame">
-  </form>
+
+
+<div class="row">
+<div class="col-sm-3 col-xs-12"> 
+    <p class='text-align-center'>{{ title }}</p>
+    <form class="" action="" method="post">{% csrf_token %}
+      {{ el_form|crispy }}      
+      <input class="btn btn-primary" type="submit" name="" value="Registrame">
+    </form>
+  </div> 
+  <div class="col-sm-3 ">
+    <p class="text-align-center">Creado con Django &amp; Bootstrap</p> 
+  </div>
+  <div class="col-sm-3 ">
+    <p class="text-align-center">Creado con Django &amp; Bootstrap</p> 
+  </div>
+  <div class="col-sm-3 ">
+    <p class="text-align-center">Creado con Django &amp; Bootstrap</p> 
+  </div>
+  
+  
+</div>
+
+
+<hr/>
+
 {% endblock content %}
