@@ -34,8 +34,9 @@
 <div class="col-sm-3 col-xs-12"> 
     <p class='text-align-center'>{{ title }}</p>
     <form class="" action="" method="post">{% csrf_token %}
-      {{ el_form|crispy }}      
-      <input class="btn btn-primary" type="submit" name="" value="Registrame">
+      {{ el_form|crispy }} 
+      </br>     
+      <input class="col-sm-12 btn btn-primary" type="submit" name="" value="Registrame">
     </form>
   </div> 
   <div class="col-sm-3 ">

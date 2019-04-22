@@ -7,24 +7,28 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Home
+                <a class="nav-link" href="/">Inicio
                     
                     
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
+                <a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                <a class="nav-link" href="{% url 'contact' %}">Contactanos</a>
             </li>
             {% comment %} <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> {% endcomment %}
         </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <ul class="navbar-nav navbar-right" >
+            {% if request.user.is_authenticated %}
+            <li class="nav-item" ><a class="nav-link" href="{% url 'auth_logout' %}" >Salir</a></li>
+            {% else %}
+            <li class="nav-item" ><a class="nav-link" href="{% url 'registration_register' %}" >Registrarte</a></li>
+            <li class="nav-item" ><a class="nav-link" href="{% url 'auth_login' %}" >Entrar</a></li>
+            {% endif %}
+        </ul>
     </div>
 </nav>
