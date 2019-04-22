@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from boletin import views
 from .views import about
 
@@ -28,6 +28,7 @@ urlpatterns = [
     path('', views.inicio, name='inicio'),
     path('contact/', views.contact, name='contact'),
     path('about/', about, name='about'),
+    path('accounts/', include('registration.backends.default.urls')),
 ]
 
 # if settings.DEBUG:
