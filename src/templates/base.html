@@ -22,14 +22,15 @@
   <body>
 
     {% include "navbar.html" %}  
-
-    <main role="main" class="container">
-
-      {% block jumbotron %}
+    {% block jumbotron %}
 
        
 
-      {% endblock jumbotron %}
+    {% endblock jumbotron %}
+
+    <main role="main" class="container">
+
+      
 
       {% block content %}
       {% endblock content %}

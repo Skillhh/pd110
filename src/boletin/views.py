@@ -9,7 +9,7 @@ from .models import Registrado
 def inicio(request):
     title = "Formulario"
     if request.user.is_authenticated:
-        title = "Bienvenido %s" %(request.user)
+        title = "Bienvenido @%s" %(request.user)
     form = RegModelForm(request.POST or None)
     if form.is_valid():
         instance = form.save(commit=False)

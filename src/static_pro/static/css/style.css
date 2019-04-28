@@ -1,0 +1,28 @@
+body{
+   
+}
+nav{
+    background-color: #563d7c!important;    
+}
+nav a{
+    color: white!important;
+    padding-right: 1rem!important;
+}
+.jumbotron{
+    margin-top: 1px;
+    background-color: #e8e5ec!important;  
+    /* color: white!important; */
+}
+.row{
+    margin-right: 0!important;
+}
+.titulo{
+    text-align: center;
+    font-weight: bold;  
+    padding: 10px;
+    margin-bottom: 10px;
+}
+i .hand{
+    font-size: 20px;
+    text-align: center;
+}

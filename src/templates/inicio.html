@@ -5,17 +5,17 @@
 
 {% block jumbotron %}
 
-  <div class="jumbotron"> 
-    <div class="row">
-      <div class="col-sm-6">                
+  <div class="jumbotron jumbotron-fluid d-flex "> 
+    <div class="row justify-content-around">
+      <div class="col-sm-5">                
         <h1>Probar Djnago</h1>
-        <p class="lead">Un proyecto para principiantes. EL objetvo es construir una página web
+        <p class="lead">Un proyecto para principiantes. El objetvo es construir una página web
         simple y elegante en muy poco tiempo</p>
         <a class="btn btn-lg btn-primary" href="/docs/4.3/components/navbar/"
           role="button">Únete &raquo;</a>
       </div>
-      <div class="col-sm-6 p-0" style="background-color: black; height: 300px;">
-        <iframe width="448" height="300" src="https://www.youtube.com/embed/ChSvnSv_3aw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="col-sm-5" style="background-color: black; height: 315px;">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/ChSvnSv_3aw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>    
@@ -33,22 +33,45 @@
 
 
 <div class="row">
-<div class="col-sm-3 col-xs-12"> 
-    <p class='text-align-center'>{{ title }}</p>
-    <form class="" action="" method="post">{% csrf_token %}
-      {{ el_form|crispy }} 
-      </br>     
-      <input class="col-sm-12 btn btn-primary" type="submit" name="" value="Registrame">
-    </form>
+<div class="col-sm-3 col-xs-12 text-center"> 
+    <p class='titulo'>
+      {{ title }}
+    </p>
+    {% if not user.is_authenticated %}
+      <form class="" action="" method="post">{% csrf_token %}
+        {{ el_form|crispy }} 
+        </br>     
+        <input class="col-sm-12 btn btn-primary" type="submit" name="" value="Registrame">
+      </form>
+    {% else %}      
+      <i class="fas fa-user-circle fa-10x mt-5"></i>
+    {% endif %}
   </div> 
-  <div class="col-sm-3 ">
-    <p class="text-align-center">Creado con Django &amp; Bootstrap</p> 
+  <div class="col-sm-3 text-center">    
+    <i class="fas fa-briefcase fa-5x my-3"></i>
+    <h3 class="h4">Aplicaciones</h3>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    </p>
+   </div>
+  <div class="col-sm-3 text-center">
+    <i class="fas fa-bullhorn fa-5x my-3 "></i>
+    <h3 class="h4 ">Fabrica de Software</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    </p>
   </div>
-  <div class="col-sm-3 ">
-    <p class="text-align-center">Creado con Django &amp; Bootstrap</p> 
-  </div>
-  <div class="col-sm-3 ">
-    <p class="text-align-center">Creado con Django &amp; Bootstrap</p> 
+  <div class="col-sm-3 text-center ">
+    <i class="fas fa-check fa-5x my-3"></i>
+    <h3 class="h4 ">Diseño Personalizados</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    </p>
   </div>
   
   
