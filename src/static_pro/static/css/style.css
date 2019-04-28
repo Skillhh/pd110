@@ -4,9 +4,12 @@ body{
 nav{
     background-color: #563d7c!important;    
 }
+.navbar{
+    padding: 0 1rem;
+}
 nav a{
     color: white!important;
-    padding-right: 1rem!important;
+    margin: 0 .5rem;    
 }
 .jumbotron{
     margin-top: 1px;
@@ -25,4 +28,16 @@ nav a{
 i .hand{
     font-size: 20px;
     text-align: center;
+}
+a.nav-link.inicio:hover{
+    color: rgb(61, 22, 73)!important;    
+}
+a.nav-link.registrar.p-2{
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+}
+a.nav-link.registrar.p-2:last-child:hover{
+    color: white;
 }

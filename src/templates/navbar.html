@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Inicio</a>
+                <a class="nav-link inicio" href="/">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a>
+                <a class="nav-link inicio" href="{% url 'about' %}">Sobre Nosotros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}">Contactanos</a>
+                <a class="nav-link inicio" href="{% url 'contact' %}">Contáctanos</a>
             </li>
             {% comment %} <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -27,7 +27,7 @@
             </li>
             {% else %}
             <li class="nav-item" >
-                <a class="nav-link" href="{% url 'registration_register' %}" >Registrarte</a>
+                <a class="nav-link registrar p-2" href="{% url 'registration_register' %}" >Registrarte</a>
             </li>
             {% comment %} <li class="nav-item" >
                 <a class="nav-link" href="{% url 'auth_login' %}" >Entrar</a>

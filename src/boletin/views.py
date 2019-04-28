@@ -7,7 +7,7 @@ from .models import Registrado
 
 # Create your views here.
 def inicio(request):
-    title = "Formulario"
+    title = "FORMULARIO"
     if request.user.is_authenticated:
         title = "Bienvenido @%s" %(request.user)
     form = RegModelForm(request.POST or None)
